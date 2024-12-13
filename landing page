@@ -1,51 +1,257 @@
-About MYDGP
-Company Name: MYDGP
-Website: mydgp.in
-App Name: MYDGP
-business app -  MYDGP TEAM 
-Business Entity: Multipurpose Technology & Service Communication Solutions
-Headquarters: UTWZ6C, West Delhi, India - 110059
-Email: info@mydgp.in
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Google Drive Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
+    }
 
-Our Vision
-At MYDGP, we are driven by the vision of creating a comprehensive and affordable digital ground platform that empowers people and businesses to interact seamlessly. We aim to provide a wide range of accessible services through innovative technology solutions, fostering an inclusive digital space where users can engage, communicate, and grow. Our mission is to make digital services not only affordable but also easily accessible to all, bringing people closer through advanced yet user-friendly solutions.
+    /* Content Container */
+    .content-container {
+      margin-bottom: 60px; /* To prevent content from overlapping with bottom nav */
+    }
 
-Personal Information We Collect
-To provide you with the best possible service and personalize your experience with MYDGP, we collect the following types of personal information:
+    /* Page Sections */
+    .section {
+      display: none;
+    }
 
-Contact Information
+    .active {
+      display: block;
+    }
 
-Email address for communication and account management
-Full name (First and Last) to personalize your experience
-Phone number for account verification, support, and communication
-Mailing address (State, Province, ZIP/Postal code, City) for delivery and billing purposes
-Social Media Data
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-Data from social media platforms such as Facebook and Twitter to facilitate easy sign-ins and improve service personalization.
-Other Personal Information
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-Any additional details you voluntarily provide to enhance your experience, including preferences, feedback, and surveys.
-Device Information We Collect
-In order to provide a seamless and optimized experience, we may collect the following device-related information:
+    .header h1 {
+      font-size: 36px;
+      color: #333;
+      line-height: 1.4;
+    }
 
-Location Data
+    /* Gallery Section */
+    .gallery-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #555;
+    }
 
-GPS-based location data to offer relevant, location-specific services and enhance the overall functionality of our platform.
-Phonebook Access
+    /* Gallery Container */
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Create dynamic columns */
+      gap: 20px; /* Space between columns */
+      padding: 20px;
+    }
 
-Permission to access contacts from your device to facilitate easy communication and sharing of services with your network.
-How You Can Reach Us
-Your privacy is important to us, and we are here to answer any questions or address concerns regarding our privacy practices. For any inquiries, please contact us using the following methods:
+    .gallery-item {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      text-align: center;
+    }
 
-Email: info@mydgp.in
-Customer Support: +91 78273 43931
-Our Commitment to Privacy and Security
-At MYDGP, we prioritize your privacy and the protection of your personal information. We adhere to strict data protection measures to ensure your data remains safe and confidential. By maintaining transparency in our data collection practices and offering clear guidelines for your control over your information, we aim to foster trust and confidence in our services.
+    /* Divider Styling */
+    hr {
+      border: 0;
+      height: 1px;
+      background-color: #ccc;
+      margin: 20px 0;
+    }
 
-Why Trust MYDGP?
-With a strong commitment to user security and data protection, we employ cutting-edge technology to safeguard your information. Our platform is designed with user-centric features that prioritize ease of use, accessibility, and customization. By ensuring a high standard of security, we enable you to confidently access our services while being in control of your personal data.
+    /* Bottom Navigation Styles */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #333;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    }
 
-Your Privacy, Our Responsibility
-We believe in empowering users to make informed decisions about their personal data. Our privacy policy is designed to give you complete transparency and control over your information, providing you with peace of mind as you use our services. We continuously work to improve our privacy practices and are always ready to assist you with any concerns.
+    .bottom-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      text-align: center;
+      padding: 5px 10px;
+    }
 
-This version enhances the tone of professionalism, incorporates a stronger focus on trust, security, and transparency, and emphasizes MYDGP’s commitment to safeguarding user privacy. It aims to make users feel confident in their interaction with your platform. Let me know if you'd like to make any further adjustments!
+    .bottom-nav a:hover {
+      background-color: #555;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 600px) {
+      .bottom-nav a {
+        font-size: 14px;
+      }
+    }
+
+    /* Button Styling */
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .nav-buttons a {
+      background-color: #2D92E0;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #1c7bb6;
+    }
+
+    /* Contact Section Styling */
+    .contact-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-info {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .contact-column h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .contact-column p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <!-- Content Container -->
+  <div class="content-container">
+    <!-- Gallery Section -->
+    <div id="gallery" class="section">
+      <div class="gallery-title">
+        <p>Explore My Photos and Videos</p>
+      </div>
+
+      <!-- Navigation buttons for Photos and Videos -->
+      <div class="nav-buttons">
+        <a href="javascript:void(0);" onclick="loadContent('photos')">Photos</a>
+        <a href="javascript:void(0);" onclick="loadContent('videos')">Videos</a>
+      </div>
+
+      <!-- Divider or Text in Gallery -->
+      <hr>
+      <p style="text-align: center; color: #000; font-size: 18px; font-weight: bold;">Deepak Studio - Capturing moments in time</p>
+
+      <!-- Gallery Container with Grid Layout -->
+      <div class="gallery-container">
+        <!-- Each gallery item wrapped in a .gallery-item -->
+        <div class="gallery-item">
+          <iframe id="gallery-frame" src="https://drive.google.com/embeddedfolderview?id=1e3OEyaST352zu7Jbap166vWLbivYSwKv#grid"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section (Original Layout) -->
+    <div id="contact" class="section">
+      <div class="header">
+        <h1>Simplify Services, Amplify Results</h1>
+      </div>
+      <p class="home-section-text">Get service instantly.</p> <!-- This text is now centered -->
+
+      <!-- New Contact Column Section -->
+      <div class="contact-column">
+        <h2>Why Choose MYDGP?</h2>
+        <p>MYDGP offers streamlined, scalable solutions to manage your services efficiently. Our platform is designed to help businesses maximize results with minimal effort. Get started with us today!</p>
+      </div>
+
+      <div class="header">
+        <h1>Contact Me</h1>
+      </div>
+      <p class="contact-info">Feel free to reach out to me. Here’s how you can contact me:</p>
+      <!-- Contact Information Column -->
+      <div class="contact-column">
+        <h2>Contact Information</h2>
+        <ul class="contact-details" style="text-align: center;">
+          <li>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mydgp7@gmail.com" target="_blank">mydgp7@gmail.com</a></li>
+          <li>Phone: <a href="tel:+917827343931">+91 78273 43931</a></li>
+        </ul>
+      </div>
+      
+      <hr>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation Bar -->
+  <div class="bottom-nav">
+    <a href="javascript:void(0);" onclick="showSection('home')">Home</a>
+    <a href="javascript:void(0);" onclick="showSection('gallery')">Gallery</a>
+    <a href="javascript:void(0);" onclick="showSection('contact')">Contact</a>
+  </div>
+
+  <script>
+    // Function to show the selected section and hide others
+    function showSection(section) {
+      var sections = document.querySelectorAll('.section');
+      sections.forEach(function(sec) {
+        sec.classList.remove('active');
+      });
+      document.getElementById(section).classList.add('active');
+    }
+
+    // Function to load content into the iframe based on button click
+    function loadContent(type) {
+      var iframe = document.getElementById('gallery-frame');
+      if (type === 'photos') {
+        iframe.src = "https://drive.google.com/embeddedfolderview?id=1e3OEyaST352zu7Jbap166vWLbivYSwKv#grid"; // Photos link
+      } else if (type === 'videos') {
+        iframe.src = "https://drive.google.com/embeddedfolderview?id=1G-SQHcALx0QA5YUITv8V7ilgu5ge1Kmw#grid"; // Videos link
+      }
+    }
+  </script>
+</body>
+ 
+  
+  
+  
+  
